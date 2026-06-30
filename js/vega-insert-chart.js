@@ -1,22 +1,31 @@
 function _insertChart(chartId, schemaUrl, width, height) {
-    document.addEventListener('DOMContentLoaded', function () {
-        console.log('ciao');
+    const renderChart = () => {
         const chartDiv = document.getElementById(chartId);
+        if (!chartDiv) {
+            return;
+        }
 
-        // Crea e aggiunge il grafico Vega
         const chart = document.createElement('vegachart');
         chart.style.width = width;
         chart.style.height = height;
         chart.setAttribute('schema-url', schemaUrl);
-        const image = chartDiv.getElementsByTagName('img');
-        console.log('Image:', image);
         chartDiv.appendChild(chart);
-        console.log('Chart created:', chart);
+
+        if (typeof parseSchema !== 'function' || typeof vegaEmbed !== 'function') {
+            return;
+        }
 
         setTimeout(() => {
-            parseSchema(chart).then(schema => vegaEmbed(chart, schema, { 'actions': false }));
+            parseSchema(chart)
+                .then(schema => vegaEmbed(chart, schema, { actions: false }))
+                .catch(() => {});
         }, 250);
+    };
 
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', renderChart, { once: true });
+        return;
+    }
 
-    });
+    renderChart();
 }

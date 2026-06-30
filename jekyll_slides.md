@@ -759,5 +759,3 @@ Prima della consegna del sito, e importante passare una checklist finale per ver
 - Controlla il repository GitHub
 
 <br>
-
-**Iniziamo a costruire!**
