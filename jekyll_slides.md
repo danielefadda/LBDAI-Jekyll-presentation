@@ -1,7 +1,7 @@
 ---
 marp: true
 theme: master
-header: 'Laboratory on Big Data and AI - Jekyll Slides'
+header: 'Laboratorio su Big Data e AI -  Jekyll'
 paginate: true
 
 ---
@@ -9,17 +9,10 @@ paginate: true
 <!-- _class: cover -->
 <!-- _paginate: skip -->
 
-<!--
-Welcome to this comprehensive guide on Jekyll website implementation. Today we'll learn how to build a website for your Big Data project using Jekyll and GitHub Pages. This tutorial will take you through every step of the process, from initial setup to final deployment. By the end of this session, you'll have a fully functional, website that you can use to showcase your project work. 
-
-Jekyll is a powerful static site generator that's perfect for academic projects, and when combined with GitHub Pages, it provides an hosting solution that's both free and reliable.
--->
-
-
 <div>
-  <h1>Jekyll Website Implementation Guide</h1>
+  <h1>Guida all'implementazione di un sito Jekyll</h1>
   <h2>LBDAI</h2>
-  <!-- <div class="subtitle">A subtitle</div> -->
+
 
   <div class="authors">
     <div class="author-name">Daniele Fadda</div>
@@ -27,10 +20,9 @@ Jekyll is a powerful static site generator that's perfect for academic projects,
   </div>
 
   <div class="university">
-    <strong>University of Pisa</strong><br>
-    Department of Computer Science<br>
-    Course: Laboratory of Big Data and AI<br>
-    Academic Year: 2025    
+    <strong>Universita di Pisa</strong><br>
+    Corso: Laboratorio di Big Data e AI<br>
+    Anno Accademico: 2025-2026
   </div>
 
 </div>
@@ -38,327 +30,376 @@ Jekyll is a powerful static site generator that's perfect for academic projects,
 <div>
 </div>
 
----
-
 <!--
-Let's start by understanding what we'll accomplish in this course. We'll cover four main areas that are essential for creating your project website. First, we'll learn about template setup - this involves cloning and configuring the Jekyll template that's been specifically designed for your Big Data projects. Next, we'll dive into repository management, where you'll learn how to set up your GitHub repository and manage collaborators effectively. We'll also cover local development setup, which is optional but highly recommended for more efficient development. Finally, we'll explore GitHub Pages deployment, which allows you to automatically publish your website. Before we begin, make sure you have a GitHub account.
+Benvenuti in questa guida completa all'implementazione di un sito web con Jekyll. Oggi vedremo come costruire un sito per il vostro progetto di Big Data usando Jekyll e GitHub Pages. Questo tutorial vi accompagnera in ogni fase del processo, dalla configurazione iniziale fino al deployment finale. Al termine della sessione avrete un sito pienamente funzionante, utile per presentare il vostro lavoro.
+
+A differenza di un CMS tradizionale, Jekyll non richiede un database: prende il vostro testo, lo processa e genera un sito web statico, pronto per essere navigato.
+
+È uno strumento particolarmente strategico per i progetti accademici e di ricerca, perché permette di separare nettamente i contenuti, scritti in semplice Markdown, dall'architettura del sito. Il vero punto di forza emerge però nell'ecosistema di GitHub: l'integrazione nativa con GitHub Pages vi fornisce non solo una soluzione di hosting gratuita e altamente affidabile, ma anche una pipeline di pubblicazione automatizzata basata sul versioning. In pratica, vi concentrate sui contenuti, e la piattaforma gestisce il resto.
 -->
 
-# Getting Started with Jekyll Template
-
-## What You'll Learn
-- **Template Setup**: Clone and configure the Jekyll template
-- **Repository Management**: Setup GitHub repository and collaborators
-- **Local Development**: Optional local development environment
-- **GitHub Pages**: Deploy your website automatically
-
-## Prerequisites
-- GitHub account
 
 ---
 
+
+
+# Primi passi con il template Jekyll
+
+## Cosa imparerete
+- **Template Setup**: clonare e configurare il template Jekyll
+- **Repository Management**: configurare repository GitHub e collaborator
+- **Local Development**: ambiente di sviluppo locale
+- **GitHub Pages**: pubblicare il sito automaticamente
+
+## Prerequisiti
+- Account GitHub
+
 <!--
-Now let's walk through the process of setting up your project template. This is the foundation of your website, so it's important to do this correctly. First, navigate to the template repository at this link.
-You'll see a green "Use this template" button in the top right corner - click on it and select "Create a new repository". When naming your repository, it's crucial to follow the specific format: g0-2025-website, but replace g0 with your actual group number. For example, if you're group 3, your repository should be named g3-2025-website. Make sure to leave the visibility as Public - this is required for GitHub Pages to work properly. Once you click "Create repository", GitHub will create a copy of the template in your account. Let's also examine the repository structure you'll be working with. The docs folder contains everything you need: _config.yml for basic site settings, _data for configuration, _pages for your website pages, assets for images and resources, and _includes and _layouts for Jekyll components and HTML templates respectively.
+Iniziamo chiarendo cosa realizzeremo in questo percorso. Copriremo quattro aree principali, fondamentali per creare il sito del progetto. 
+
+Prima vedremo il setup del template: clonazione e configurazione del template Jekyll pensato per i vostri progetti Big Data. 
+
+Poi passeremo alla gestione del repository, con la configurazione su GitHub e la gestione dei collaborator. 
+
+Tratteremo anche il local development setup. Infine vedremo il deployment su GitHub Pages, che consente la pubblicazione automatica del sito. 
+
+Prima di iniziare, assicuratevi di avere un account GitHub.
 -->
-
-# Step 1: Setting Up the Project Template
-
-## Using the Template Repository
-1. **Navigate to**: `https://github.com/danielefadda/master-projects-template-2025`
-2. **Click**: "Use this template" button (top right)
-3. **Select**: "Create a new repository"
-4. **Name format**: `g0-2025-website` (replace `g0` with your group number)
-5. **Visibility**: Leave as Public
-6. **Create**: Click "Create repository"
 
 ---
 
+# Check dell'installazione 
+
+## Jekyll 3.9.3 o successive
+
+`jekyll -v` per controllare la versione installata
+
+## Ruby 3.1 o successive
+
+`ruby -v` per controllare la versione di Ruby installata
+
+---
+
+# Passo 1: Configurazione del template di progetto
+
+<div class="alert">
+  Questo passaggio deve essere eseguito da un componente solo del gruppo.
+</div>
+
+## Uso del repository template
+1. **Vai su**: `https://github.com/danielefadda/master-projects-template-2026`
+2. **Clicca**: pulsante "Use this template" (in alto a destra)
+3. **Seleziona**: "Create a new repository"
+4. **Formato nome**: `g0-2026-website` (sostituisci `g0` con il numero del tuo gruppo)
+5. **Visibilita**: lascia Public
+6. **Crea**: clicca "Create repository"
+
+
 <!--
-Now that you've created your repository, let's take a closer look at the structure of your project. This is important because it will help you understand where to place your files and how everything is organized. The main directory is called docs, which is where all your website files will live. Inside docs, you'll find several important folders and files. The _config.yml file contains your site's basic settings, such as the base URL and site title. The _data folder holds configuration files, like settings.yml, which contains visual configurations and content. The _pages folder is where you'll create your website pages, such as index.md for your homepage, project.md for your project description, team.md for team member information, and deliverables.md for your results and downloads. The assets folder is where you store images and other resources. The _includes folder contains reusable Jekyll components, like headers and footers, while the _layouts folder holds HTML layouts that define the structure of your pages. Understanding this structure is crucial for effectively managing your website content and ensuring everything is organized properly.
+Ora vediamo il processo di configurazione del template di progetto. Questa e la base del vostro sito, quindi e importante farla correttamente. Per prima cosa, aprite il repository template al link indicato.
+Vedrete il pulsante verde "Use this template" in alto a destra: cliccatelo e selezionate "Create a new repository". Quando assegnate il nome al repository, e fondamentale seguire il formato: g0-2026-website, sostituendo g0 con il numero reale del vostro gruppo. Ad esempio, se siete il gruppo 3, il nome sara g3-2026-website. Lasciate la visibilita su Public: e necessario per il corretto funzionamento di GitHub Pages. Cliccando "Create repository", GitHub creera una copia del template nel vostro account. Guardiamo anche la struttura del repository su cui lavorerete. La cartella docs contiene tutto il necessario: _config.yml per i settaggi base del sito, _data per la configurazione, _pages per le pagine del sito, assets per immagini e risorse, e _includes/_layouts rispettivamente per componenti Jekyll e template HTML.
 -->
 
-# Understanding the Project Structure
+---
 
-## Repository Structure
+# Passo 2: Gestione dei collaboratori
+
+## Aggiungere membri al team
+1. **Impostazioni repository**: vai nelle impostazioni del repository
+2. **Manage Access**: clicca "Manage access"
+3. **Invite Collaborators**: aggiungi i membri tramite username GitHub o email
+4. **Docenti richiesti**: aggiungi sempre: `danielefadda`, `Elecapp` e `robertotrasarti`
+
+<!--
+La collaborazione e un aspetto chiave. Vediamo come aggiungere i membri del team al repository. Andate nel repository e cliccate sulla tab "Settings". Poi, nella barra laterale sinistra, cliccate su "Manage access". Qui troverete il pulsante "Invite a collaborator": cliccatelo e inserite username GitHub o email dei membri del team. E importante ricordare che dovete sempre aggiungere due docenti specifici come collaborator: danielefadda e Elecapp. Sono i nostri account e ci permettono di monitorare i progressi e fornire feedback.
+-->
+
+---
+
+# Passo 2: Gestione dei collaboratori
+
+## Cosa faranno i collaboratori?
+- **Clone repository**: scaricheranno il progetto in locale
+- **Modifiche e commit**: apporteranno modifiche e le salveranno con commit
+- **Push su GitHub**: invieranno le modifiche al repository remoto
+
+## Buone pratiche di collaborazione
+- **Lavorare su branch separati**: ogni task dovrebbe avere un branch dedicato
+- **Commit frequenti**: salvate spesso le modifiche con messaggi chiari
+- **Code review**: rivedete le modifiche prima del merge
+- **Pull request**: usate PR per integrare le modifiche nel branch principale
+- **Comunicazione chiara**: usa le GitHub Issues per tracciare i task
+
+
+---
+
+# Comprendere la struttura del progetto
+
+## Struttura del repository
 ```
 project-template/docs/
-├── _config.yml          # Basic site settings
+├── _config.yml          # Impostazioni base del sito
 ├── _data/
-│   └── settings.yml     # Visual config and content
-├── _pages/              # Your website pages
-├── assets/              # Images and resources
-├── _includes/           # Jekyll components
-└── _layouts/            # HTML layouts
+│   └── settings.yml     # Configurazione visuale e contenuti
+├── _pages/              # Pagine del vostro sito
+├── assets/              # Immagini e risorse
+├── _includes/           # Componenti Jekyll
+└── _layouts/            # Layout HTML
 ```
 
----
 
 <!--
-Collaboration is a key aspect. Let's learn how to add team members to your repository. First, go to your repository and click on the "Settings" tab. Then, in the left sidebar, click on "Manage access". Here you'll see an "Invite a collaborator" button - click it and enter your team members' GitHub usernames or email addresses. It's important to note that you must always add two specific teachers as collaborators: danielefadda and Elecapp. These are our accounts and we will be able to monitor your progress and provide feedback.
+Ora che avete creato il repository, analizziamone meglio la struttura. Questo e importante per capire dove inserire i file e come e organizzato l'insieme del progetto. La directory principale e docs, dove risiedono tutti i file del sito. All'interno di docs trovate diverse cartelle e file importanti. Il file _config.yml contiene i settaggi base del sito, come base URL e titolo. La cartella _data contiene file di configurazione come settings.yml, con impostazioni visuali e contenuti. La cartella _pages ospita le pagine del sito, ad esempio index.md per la homepage, project.md per la descrizione del progetto, team.md per i membri del team e deliverables.md per risultati e download. La cartella assets contiene immagini e altre risorse. _includes contiene componenti Jekyll riutilizzabili (header, footer, ecc.), mentre _layouts contiene i layout HTML che definiscono la struttura delle pagine. Capire questa struttura e fondamentale per gestire in modo efficace i contenuti del sito.
 -->
-
-# Step 2: Collaborator Management
-
-## Adding Team Members
-1. **Repository Settings**: Go to your repository settings
-2. **Manage Access**: Click "Manage access"
-3. **Invite Collaborators**: Add team members by GitHub username or email
-4. **Required Teachers**: Always add: `danielefadda` and `Elecapp`
-
-## Collaboration Best Practices
-- **Clear Communication**: Use GitHub issues for task tracking
-- **Branch Protection**: Consider protecting main branch
-- **Code Reviews**: Review each other's changes before merging
 
 ---
 
-<!--
-Local development setup is optional. With local development, you get immediate preview of changes without having to push to GitHub and wait for the site to rebuild. You can work offline and you can use your favorite IDE or editor with all its features.
-However, there are some considerations: initial setup takes time, you need Ruby and its dependencies installed, and you'll need to maintain your local environment. Here's how to set it up: First, follow the official Jekyll installation guide for your operating system at jekyllrb.com/docs/installation. Then clone your repository locally, run "bundle install" to install dependencies, and finally run "bundle exec jekyll serve" to start the development server. Your site will be available at localhost:4000 followed by your repository name.
--->
+# Passo 3: Setup sviluppo locale (già fatto)
 
-# Step 3: Local Development Setup (Optional)
+## Installazione Ruby e Jekyll
+1. **Installa Ruby**: segui la [guida ufficiale Jekyll](https://jekyllrb.com/docs/installation/)
+2. **Clona il repository**: `git clone [your-repo-url]`
+3. **Installa le dipendenze**: `bundle install`
+4. **Avvia il server**: `bundle exec jekyll serve`
+5. **Accedi al sito**: `http://127.0.0.1:4000/[repo-name]`
 
-## Ruby and Jekyll Installation
-1. **Install Ruby**: Follow [official Jekyll guide](https://jekyllrb.com/docs/installation/)
-2. **Clone Repository**: `git clone [your-repo-url]`
-3. **Install Dependencies**: `bundle install`
-4. **Launch Server**: `bundle exec jekyll serve`
-5. **Access Site**: `http://127.0.0.1:4000/[repo-name]`
-
-## Benefits of Local Development
-- **Faster Testing**: Immediate preview of changes
-- **Offline Work**: No internet required for development
-- **Advanced Editing**: Use your favorite IDE
+## Vantaggi dello sviluppo locale
+- **Test piu rapidi**: preview immediata delle modifiche
+- **Lavoro offline**: non serve Internet durante lo sviluppo (eccetto per compilare il remote theme)
+- **Editing avanzato**: usa il tuo IDE preferito
 
 ---
 
-<!--
-You have three different methods for editing your website files, each with its own advantages. First, direct GitHub editing is the simplest approach - you can edit files directly in your browser without any setup. This is perfect for quick content changes and simple updates. Second, GitHub Codespaces provides a more advanced editor experience right in your browser. It offers syntax highlighting, code completion, and the ability to install extensions like Prettier for automatic code formatting. To access Codespaces, click the "Code" button in your repository and select "Create codespace on main". Third, local development gives you full control by allowing you to use any editor you prefer, like VS Code or PyCharm. You get advanced version control features and can work offline. Each method has its place in your development workflow, so choose the one that best fits your current needs and technical comfort level.
--->
-
-# Step 4: Editing Files - Three Methods
+# Passo 4: Modifica file - Tre metodi
 
 <div class="columns-2">
 <div>
 
-## Method 1: Direct GitHub Editing
-- **Simple Changes**: Edit files directly in browser
-- **Quick Updates**: Perfect for content changes
-- **No Setup**: No local installation required
+## Metodo 1: Editing diretto su GitHub
+- **Modifiche semplici**: modifica file direttamente nel browser
+- **Aggiornamenti rapidi**: ideale per contenuti testuali
+- **Nessun setup**: no installazione locale
 
-## Method 2: GitHub Codespaces
-- **Advanced Editor**: Full IDE in browser
-- **Syntax Highlighting**: Better code editing experience
-- **Extensions**: Install Prettier for code formatting
+## Metodo 2: GitHub Codespaces
+- **Editor avanzato**: IDE completo nel browser
+- **Estensioni**: installa Prettier per formattazione codice
 
 </div>
 <div>
 
-## Method 3: Local Development
-- **Full Control**: Use any editor (VS Code, Sublime, etc.)
-- **Git Integration**: Advanced version control
-- **Offline Work**: No internet dependency
+## Metodo 3: Sviluppo locale (consigliato)
+- **Controllo completo**: usa qualsiasi editor <br>(noi usiamo VS Code)
+- **Integrazione Git**: version control avanzato
+- **Lavoro offline**: *ni*, il tema è comunque in remoto, ma puoi fare modifiche senza connessione costante.
 
 </div>
 </div>
+
+<!--
+Avete tre metodi diversi per modificare i file del sito, ciascuno con vantaggi specifici. Primo, l'editing diretto su GitHub e l'approccio piu semplice: modificate i file direttamente dal browser senza setup locale. E perfetto per modifiche rapide e aggiornamenti di contenuto. Secondo, GitHub Codespaces offre un'esperienza editor piu avanzata direttamente nel browser. Include syntax highlighting, code completion e possibilita di installare estensioni come Prettier per il formatting automatico. Per aprire Codespaces, cliccate "Code" nel repository e selezionate "Create codespace on main". Terzo, lo sviluppo locale offre il controllo totale: potete usare editor come VS Code o PyCharm, integrare meglio Git e lavorare offline. Ogni metodo ha il suo spazio nel workflow, scegliete quello piu adatto al contesto e al vostro livello tecnico.
+-->
 
 ---
 
-<!--
-Now let's configure the most important file in your Jekyll setup: _config.yml. This file controls your site's basic settings and must be configured correctly for your website to work properly. The most critical setting is the baseurl, which must match your repository name exactly. For example, if your repository is named g3-2025-website, your baseurl should be "/g3-2025-website". The url should be your GitHub Pages domain, typically "https://username.github.io" where username is your GitHub username. You'll also want to customize your site's title, subtitle, and description - these appear on your website and in search engines. The github_repo section is used to create links in your footer. You should include links to both your project repository and your website repository. Pay attention to YAML formatting - indentation is crucial and must be consistent. After making changes to _config.yml, if you're running locally, you'll need to restart your Jekyll server to see the changes.
--->
-
-# Step 5: Configuring _config.yml 
+# Passo 5: Configurare _config.yml
 
 ```yaml
-# Repository settings
-baseurl: "/g0-2025-website"  # Your repo name
-url: "https://username.github.io"  # Your GitHub Pages URL
+# Impostazioni repository
+baseurl: "/g0-2026-website"  # Nome del repository
+url: "https://username.github.io"  # URL GitHub Pages
 
-# Site information
-title: "Your Project Title"
-subtitle: "Project Subtitle"
-description: "Brief project description"
+# Informazioni sito
+title: "Titolo del Progetto"
+subtitle: "Sottotitolo del Progetto"
+description: "Breve descrizione del progetto"
 
-# Repository links (footer)
+# Link repository (footer)
 github_repo:
-  - name: "Group 0 - Website repository"
+  - name: "Gruppo 0 - Repository del sito"
     url: "https://github.com/your-username/website-repo"
 ```
 
-## Key Variables
-- **baseurl**: Must match your repository name
-- **url**: Your GitHub Pages domain
-- **title/subtitle**: Displayed on your website
-- **github_repo**: Links shown in footer
+## Variabili chiave
+- **baseurl**: deve corrispondere al nome del repository
+- **url**: dominio GitHub Pages
+- **title/subtitle**: mostrati sul sito
+- **github_repo**: link visualizzati nel footer
+
+<!--
+Ora configuriamo il file piu importante del setup Jekyll: _config.yml. Questo file controlla i settaggi base del sito e deve essere configurato correttamente per funzionare. L'impostazione piu critica e baseurl, che deve corrispondere esattamente al nome del repository. Ad esempio, se il repository si chiama g3-2026-website, il baseurl deve essere "/g3-2026-website". La variabile url dovrebbe essere il dominio GitHub Pages, in genere "https://username.github.io" dove username e il vostro username GitHub. Personalizzate anche titolo, sottotitolo e descrizione: compariranno sul sito e nei motori di ricerca. 
+La sezione github_repo serve a creare link nel footer. Inserite i link sia del repository del progetto sia del repository del sito. Attenzione alla formattazione YAML: l'indentazione e fondamentale e deve essere coerente. Dopo modifiche a _config.yml, se lavorate in locale, riavviate il server Jekyll per applicare i cambiamenti.
+-->
 
 ---
 
+# Passo 6: Deployment con GitHub Pages
+
+## Pubblicare il sito
+1. **Crea il branch `gh-pages`**: vai su GitHub, clicca "Branch" e crea un nuovo branch:`gh-pages`
+2. **Configura Pages**
+    - vai in Settings > Pages.
+    - In "Source", seleziona "Deploy from a branch" `gh-pages` e cartella `/ (root)`.
+4. **Deploy tramite action**: nella tab "Actions", clicca sul workflow `Deploy to GitHub Pages` e poi "Run workflow" per avviare il deploy.
+## URL del sito
+- **Formato**: `https://username.github.io/repository-name/`
+- **Esempio**: `https://johndoe.github.io/g0-2026-website/`
+
+
 <!--
-Let's now deploy your website using GitHub Pages. This is one of the most interesting parts because you'll see your website come alive on the internet! First, go to your repository settings and click on "Pages" in the left sidebar. Under "Source", select "Deploy from a branch", then choose "main" as your branch and "docs" as the folder. This tells GitHub Pages to build your site from the docs folder in your main branch. Click "Save" and GitHub will start building your site.
+Passiamo ora al deployment del sito con GitHub Pages. E una delle parti piu interessanti perche vedrete il vostro sito online!
+- Create un nuovo branch chiamato `gh-pages`. Potete farlo direttamente su GitHub cliccando sul menu a tendina dei branch e selezionando "Create branch".
+- Configurate la sezione "Pages" nelle impostazioni del repository. Andate in Settings > Pages, e nella sezione "Source" selezionate "Deploy from a branch", scegliendo il branch `gh-pages` e la cartella `/ (root)`.
+- Andate su Actions, selezionate il workflow `Deploy to GitHub Pages` e cliccate "Run workflow" per avviare il deploy. Questo processo costruira il sito e lo pubblichera su GitHub Pages.
 -->
-
-# Step 6: GitHub Pages Deployment
-
-## Publishing Your Website
-1. **Repository Settings**: Go to Settings → Pages
-2. **Source Branch**: Select `main` branch
-3. **Root Directory**: Choose `docs` folder
-4. **Automatic Deployment**: Site updates on every push
-
-## Your Website URL
-- **Format**: `https://username.github.io/repository-name/`
-- **Example**: `https://johndoe.github.io/g0-2025-website/`
 
 ---
 
+# Passo 6: Suggerimenti per il deployment GitHub Pages
+
+## Suggerimenti per il deployment
+- **Tempo di build**: considera *5-10 minuti* per il primo deploy
+- **Aggiornamenti**: le succesive modifiche compaiono in tempi più ragionevoli
+- **Troubleshooting**: controlla la tab Actions per eventuali errori
+
 <!--
-The build process usually takes some minutes for the first deployment. Your website will be available at the URL format https://username.github.io/repository-name/. For example, if your GitHub username is elecapp and your repository is g3-2025-website, your site will be at https://elecapp.github.io/g3-2025-website/. Once set up, every time you push changes to your main branch, GitHub Pages will automatically rebuild and update your site. This typically happens within minutes of your push. If you encounter any issues, you can check the Actions tab in your repository to see build logs and troubleshoot any problems.
+Il processo di build richiede normalmente alcuni minuti al primo deployment. Il sito sara disponibile nel formato URL https://username.github.io/repository-name/. Ad esempio, se il vostro username GitHub e elecapp e il repository e g3-2026-website, il sito sara su https://elecapp.github.io/g3-2026-website/. Dopo la configurazione iniziale, ogni push su main attivera automaticamente rebuild e aggiornamento del sito. In genere l'aggiornamento avviene in pochi minuti. Se trovate problemi, controllate la tab Actions del repository per analizzare i log di build e fare troubleshooting.
 -->
-
-# Step 6: GitHub Pages Deployment Tips
-
-## Deployment Tips
-- **Build Time**: Allow 5-10 minutes for initial deployment
-- **Updates**: Changes appear within minutes after push
-- **Troubleshooting**: Check Actions tab for build errors
 
 ---
 
-<!--
-Now let's understand how to create and manage pages in your Jekyll website. Your website pages are stored in the _pages directory, and each Markdown file corresponds to a page on your final website. The template comes with four essential pages: index.md for your homepage, project.md for your project description, team.md for team member information, and deliverables.md for your results and downloads. You can also create additional custom pages like about.md for extra information about your project or methodology.
--->
+# Passo 7: Creare e gestire le pagine
 
-# Step 7: Creating and Managing Pages
-
-## Page Structure
+## Struttura pagine
 ```
 docs/_pages/
 ├── index.md          # Homepage
-├── project.md        # Project description
-├── team.md           # Team members
-├── deliverables.md   # Results and downloads
-└── about.md          # Custom page (optional)
+├── project.md        # Descrizione progetto
+├── team.md           # Membri del team
+├── deliverables.md   # Risultati e download
+└── about.md          # Pagina custom (opzionale)
 ```
 
----
-
 <!--
-To create a new page, simply add a new .md file to the _pages directory. The filename will become the URL path - for example, if you create about.md, it will be accessible at your-site-url/about/. Each page must start with front matter, which is metadata enclosed in triple dashes. This includes the layout, title, subtitle, and other page-specific settings. The content is written in Markdown format, which is simple and easy to learn. Jekyll automatically processes these files and converts them to HTML for your website.
+Ora vediamo come creare e gestire le pagine del sito Jekyll. Le pagine sono nella directory _pages e ogni file Markdown corrisponde a una pagina del sito finale. Il template include quattro pagine essenziali: index.md per la homepage, project.md per la descrizione del progetto, team.md per le informazioni del team e deliverables.md per risultati e download. Potete anche creare pagine personalizzate aggiuntive come about.md per informazioni extra su progetto o metodologia.
 -->
-
-# Step 7: Creating and Managing Pages
-
-## Creating a New Page
-1. **Create File**: Add `.md` file in `_pages/` directory
-2. **Front Matter**: Add YAML header with metadata
-3. **Content**: Write in Markdown format
-4. **URL**: File name becomes page URL
 
 ---
 
+# Passo 7: Creare e gestire le pagine
+
+## Creare una nuova pagina
+1. **Crea file**: aggiungi un file `.md` nella directory `_pages/`
+2. **Front Matter**: aggiungi header YAML con metadati
+3. **Contenuto**: scrivi in formato Markdown
+4. **URL**: il nome file diventa URL della pagina
+
+
 <!--
-Front matter is a crucial concept in Jekyll that you need to understand well. It's the metadata section at the beginning of each page file, enclosed in triple dashes. Think of it as the settings for each individual page. The layout determines which HTML template to use - "default" is the most common choice. The title and subtitle appear at the top of your page and in browser tabs. The header_type controls the visual style of your page header. The header_img allows you to specify a background image for your header. If you're using charts on your page, set "vega: true" to enable chart functionality. All these settings work together to create the look and feel of your individual pages.
+Per creare una nuova pagina, aggiungete semplicemente un file .md nella directory _pages. Il nome file diventa il path dell'URL: ad esempio, creando about.md la pagina sara disponibile su your-site-url/about/. Ogni pagina deve iniziare con il front matter, cioe metadati racchiusi tra triple linee. Qui inserite layout, title, subtitle e altre impostazioni specifiche. Il contenuto e scritto in Markdown, semplice da leggere e scrivere. Jekyll processa automaticamente questi file e li converte in HTML per il sito.
 -->
 
-# Step 8: Front Matter Configuration
+---
 
-## Basic Front Matter
+# Passo 8: Configurazione Front Matter
+
+## Front Matter base
 ```yaml
 ---
 layout: default
-title: "Page Title"
-subtitle: "Page Subtitle"
+title: "Titolo Pagina"
+subtitle: "Sottotitolo Pagina"
 header_type: hero
 header_img: assets/images/header.png
-vega: true  # Enable charts
+vega: true  # Abilita i grafici
 ---
 ```
 
----
-
 <!--
-You have several options for header types, each creating a different visual impact. For example the "hero" type creates a full-width header with a background image, perfect for making a strong first impression. The "base" type is the standard header that works well for most content pages. The "splash" type creates a dramatic full-screen header that's perfect for landing pages or major section introductions. Choose the header type that best fits the content and purpose of each page.
+Il front matter e un concetto cruciale in Jekyll da comprendere bene. E la sezione metadati all'inizio di ogni file pagina, racchiusa tra triple linee. Consideratela come il pannello impostazioni della singola pagina. Il layout determina quale template HTML usare: "default" e la scelta piu comune. Title e subtitle compaiono in cima alla pagina e nelle tab del browser. header_type controlla lo stile visuale dell'header. header_img permette di specificare un'immagine di sfondo per l'header. Se usate grafici nella pagina, impostate "vega: true" per abilitarli. Queste impostazioni lavorano insieme per definire look and feel di ogni pagina.
 -->
-
-# Step 8: Front Matter Configuration
-
-## Header Types
-- **hero**: Full-width header with background image
-- **base**: Standard header
-- **post**: Blog-style header
-- **image**: Image-focused header
-- **splash**: Dramatic full-screen header
 
 ---
 
 <!--
-Let's learn about creating content with Markdown. Markdown is a lightweight markup language that's easy to learn and write. For headings, use hash symbols - one hash for the main heading, two for sub-headings, and so on. For emphasis, use double asterisks for bold text and single asterisks for italic text. Lists are simple: use dashes for bullet points and numbers for ordered lists. Links are created with square brackets for the text and parentheses for the URL. The template also includes some enhanced styling options. You can add {: .lead} after a paragraph to make it stand out as a highlighted paragraph. Similarly, {: .green} will make text appear in green color. These special classes help you create visually appealing content that draws attention to important information. Remember that Markdown is converted to HTML, so you can also use HTML tags directly when you need more complex formatting.
+Avete diverse opzioni per i tipi di header, ciascuna con un impatto visivo differente. Ad esempio, il tipo "hero" crea un header full-width con immagine di sfondo, perfetto per una prima impressione forte. Il tipo "base" e l'header standard, adatto alla maggior parte delle pagine contenuto. Il tipo "splash" crea un header full-screen piu scenografico, ottimo per landing page o introduzioni di sezione. Scegliete il tipo di header in base al contenuto e all'obiettivo della pagina.
 -->
 
-# Step 9: Content Creation with Markdown
+# Passo 8: Configurazione Front Matter
+
+## Tipi di header
+- **hero**: header full-width con immagine di sfondo
+- **base**: header standard
+- **post**: header in stile blog
+- **image**: header focalizzato sull'immagine
+- **splash**: header full-screen ad alto impatto
+
+---
+
+
+# Passo 9: Creazione contenuti con Markdown
 
 <div class="columns-2">
 <div>
 
-## Markdown Basics
+## Fondamenti Markdown
 ```markdown
-# Heading 1
-## Heading 2
+# Titolo 1
+## Titolo 2
 
-**Bold text**
-*Italic text*
+**Testo in grassetto**
+*Testo in corsivo*
 
-- Bullet list
-- Another item
+- Elenco puntato
+- Un altro elemento
 
-[Link text](https://example.com)
+[Testo link](https://example.com)
 ```
 
 </div>
 <div>
 
-## Enhanced Styling
+## Styling avanzato
 ```markdown
-This is a highlighted paragraph.
+Questo è un paragrafo evidenziato.
 {: .lead}
 
-This text appears in green.
+Questo testo appare in verde.
 {: .green}
 ```
 </div>
 </div>
 
----
 
 <!--
-Images are an important part of any website, and Jekyll makes it easy to manage them. All images should be stored in the assets/images/ directory to keep everything organized. You can add images using standard Markdown syntax with exclamation mark, square brackets for alt text, and parentheses for the image path. Alternatively, you can use HTML img tags for more control over styling.  Make sure your images are optimized for web use to ensure fast loading times.
+Impariamo ora a creare contenuti con Markdown. Markdown e un linguaggio di markup leggero, semplice da apprendere e usare. Per i titoli usate il simbolo cancelletto: un # per titolo principale, due ## per sottotitoli e cosi via. Per enfasi, usate doppio asterisco per grassetto e singolo asterisco per corsivo. Le liste sono immediate: trattini per elenchi puntati e numeri per liste ordinate. I link si creano con parentesi quadre per il testo e tonde per l'URL. Il template include anche opzioni di styling avanzato. Potete aggiungere {: .lead} dopo un paragrafo per evidenziarlo, oppure {: .green} per mostrare testo in verde. Queste classi aiutano a creare contenuti visivamente efficaci e a mettere in risalto le informazioni importanti. Ricordate che Markdown viene convertito in HTML, quindi potete usare anche tag HTML quando servono formattazioni piu complesse.
 -->
-
-# Step 10: Adding Images
-
-## Image Management
-- **Location**: Store images in `assets/images/`
-- **Markdown Syntax**: `![Alt text](assets/images/image.jpg)`
-- **HTML Tag**: `<img src="assets/images/image.jpg" alt="Description">`
 
 ---
 
+
+# Passo 10: Aggiungere immagini
+
+## Gestione immagini
+- **Posizione**: salva le immagini in `assets/images/`
+- **Sintassi Markdown**: `![Testo alt](assets/images/image.jpg)`
+- **Tag HTML**: `<img src="assets/images/image.jpg" alt="Descrizione">`
+
 <!--
-The template also includes a gallery feature for displaying multiple images in an attractive layout. To create a gallery, save your images in a subdirectory like assets/images/gallery_name/, then use the include statement shown on the slide. You'll need to configure the gallery in your _config.yml file by adding the directory path to the defaults section. This creates a responsive masonry-style gallery that looks professional and works well on all devices. The gallery automatically adjusts to different screen sizes and provides a clean, organized way to showcase multiple images related to your project.
+Le immagini sono una parte importante di qualsiasi sito, e Jekyll ne semplifica la gestione. Tutte le immagini dovrebbero essere salvate nella directory assets/images/ per mantenere l'organizzazione. Potete aggiungere immagini con la sintassi Markdown standard (punto esclamativo, testo alt tra parentesi quadre, path tra parentesi tonde). In alternativa potete usare il tag HTML img per un controllo maggiore sullo styling. Assicuratevi che le immagini siano ottimizzate per il web, cosi da garantire tempi di caricamento rapidi.
 -->
 
-## Image Galleries
+---
+
+
+## Gallerie di immagini
 ```markdown
-<!-- Save images in assets/images/gallery_name/ -->
+<!-- Salva le immagini in assets/images/gallery_name/ -->
 {% include_cached snippets/masonry.html internal="gallery_name" %}
 ```
 
-## Gallery Configuration
+## Configurazione gallery
 ```yaml
-# In _config.yml
+# Nel file _config.yml
 defaults:
   - scope:
       path: "assets/images/gallery_name"
@@ -366,75 +407,76 @@ defaults:
       image_col: gallery_name
 ```
 
----
-
 <!--
-Video content can greatly enhance your project presentation, and Jekyll makes it easy to embed videos. The template includes built-in support for YouTube videos using a simple shortcode. Just use the include statement with the video ID from the YouTube URL and specify "youtube" as the provider. The template also supports other video platforms like Vimeo - simply change the provider name. The great thing about this video embedding system is that it's fully responsive, meaning the videos will automatically adjust to fit different screen sizes and devices. This ensures your content looks great whether someone is viewing it on a desktop computer, tablet, or smartphone.
+Il template include anche una funzionalita gallery per mostrare piu immagini in un layout ordinato. Per creare una gallery, salvate le immagini in una sottocartella come assets/images/gallery_name/ e poi usate l'include mostrato nella slide. Dovrete configurare la gallery in _config.yml aggiungendo il path della directory nella sezione defaults. Questo crea una gallery responsive in stile masonry, professionale e adatta a tutti i dispositivi. La gallery si adatta automaticamente alle diverse dimensioni dello schermo e offre un modo pulito per presentare immagini legate al progetto.
 -->
 
-# Step 11: Embedding Videos
+---
 
-## YouTube Integration
+# Passo 11: Embedding dei video
+
+## Integrazione YouTube
 ```html
-<!-- Video shortcode -->
+<!-- Shortcode video -->
 {% include video id="VIDEO_ID" provider="youtube" %}
 ```
 
-## Video Providers
-- **YouTube**: Most common choice
-- **Vimeo**: Professional videos
-- **Dailymotion**: Alternative platform
+## Provider video
+- **YouTube**: scelta piu comune
+- **Vimeo**: video professionali
+- **Dailymotion**: piattaforma alternativa
+
+
+<!--
+I contenuti video possono valorizzare molto la presentazione del progetto, e Jekyll rende semplice l'embed. Il template include supporto nativo ai video YouTube tramite shortcode. Basta usare l'include con l'ID del video preso dall'URL YouTube e indicare "youtube" come provider. Il template supporta anche altre piattaforme come Vimeo: e sufficiente cambiare il nome del provider. Il vantaggio di questo sistema e che e completamente responsive: i video si adattano automaticamente a schermi e dispositivi diversi. In questo modo i contenuti restano efficaci su desktop, tablet e smartphone.
+-->
 
 ---
 
-<!--
-Icons and visual elements can make your website more engaging and easier to navigate. The template includes Font Awesome, which provides thousands of high-quality icons. To use an icon, simply include the HTML code with the appropriate class name. For example, fa-solid fa-pen-nib creates a pen icon, fa-solid fa-code creates a code icon, and fa-solid fa-chart-bar creates a chart icon. You can find the complete library of available icons at fontawesome.com/search. Icons are particularly useful for highlighting different sections of your content, creating visual breaks in text, and making your navigation more intuitive. When using icons, remember to maintain consistency in style and don't overuse them - they should enhance your content, not distract from it.
--->
+# Passo 12: Aggiungere icone ed elementi visivi
 
-# Step 12: Adding Icons and Visual Elements
-
-## Font Awesome Icons
+## Icone Font Awesome
 ```html
-<i class="fa-solid fa-pen-nib"></i> Text with icon
-<i class="fa-solid fa-code"></i> Code icon
-<i class="fa-solid fa-chart-bar"></i> Chart icon
+<i class="fa-solid fa-pen-nib"></i> Testo con icona
+<i class="fa-solid fa-code"></i> Icona codice
+<i class="fa-solid fa-chart-bar"></i> Icona grafico
 ```
 
 <div class="columns-2">
 <div>
 
-## Icon Resources
+## Risorse icone
 - **Font Awesome**: [fontawesome.com](https://fontawesome.com/search)
-- **Variety**: Thousands of free icons
-- **Categories**: Technical, social, business, etc.
+- **Varieta**: migliaia di icone gratuite
+- **Categorie**: tecniche, social, business, ecc.
 
 </div>
 <div>
 
-## Usage Tips
-- Use icons to enhance readability
-- Maintain consistency in icon style
-- Don't overuse - less is more
+## Suggerimenti d'uso
+- Usa le icone per migliorare la leggibilita
+- Mantieni coerenza nello stile delle icone
+- Non abusarne: meno e meglio
 
 </div>
 </div>
+
+<!--
+Icone ed elementi visivi possono rendere il sito piu coinvolgente e facile da navigare. Il template include Font Awesome, che offre migliaia di icone di alta qualita. Per usare un'icona basta inserire il codice HTML con la classe corretta. Ad esempio, fa-solid fa-pen-nib crea un'icona penna, fa-solid fa-code un'icona codice, fa-solid fa-chart-bar un'icona grafico. La libreria completa e disponibile su fontawesome.com/search. Le icone sono utili per evidenziare sezioni, creare pause visive nel testo e rendere la navigazione piu intuitiva. Quando usate le icone, mantenete coerenza di stile e non eccedete: devono arricchire il contenuto, non distrarre.
+-->
 
 ---
 
-<!--
-Modals are pop-up windows that display additional content without leaving the current page. They're perfect for showing detailed information, larger images, or technical content without cluttering your main page. The template uses Bootstrap's modal component, which provides a clean, responsive modal system. To create a modal, you need two parts: a trigger button and the modal structure itself. The trigger button has data-toggle and data-target attributes that specify which modal to open. The modal structure includes a header with a title and close button, a body for your content, and an optional footer. You can customize the modal size using classes like modal-xl for extra large, modal-lg for large, or modal-sm for small. The modal-dialog-centered class centers the modal vertically on the page.
--->
-
-# Step 13: Creating Interactive Modals
+# Passo 13: Creare modal interattivi
 
 <div class="columns-2">
 <div>
 
 ```html
-<!-- Trigger button -->
-<button type="button" class="btn btn-primary" 
+<!-- Pulsante trigger -->
+<button type="button" class="btn btn-primary"
         data-toggle="modal" data-target="#myModal">
-    Open Modal
+    Apri Modal
 </button>
 ```
 
@@ -443,17 +485,17 @@ Modals are pop-up windows that display additional content without leaving the cu
 
 ```html
 
-<!-- Modal structure -->
+<!-- Struttura modal -->
 <div class="modal fade" id="myModal" tabindex="-1">
   <div class="modal-dialog modal-xl modal-dialog-centered">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title">Modal Title</h5>
-        <button type="button" class="btn-close" 
+        <h5 class="modal-title">Titolo Modal</h5>
+        <button type="button" class="btn-close"
                 data-bs-dismiss="modal"></button>
       </div>
       <div class="modal-body">
-        Modal content goes here...
+        Contenuto del modal...
       </div>
     </div>
   </div>
@@ -463,35 +505,39 @@ Modals are pop-up windows that display additional content without leaving the cu
 </div>
 </div>
 
----
-
 <!--
-Data visualization is a crucial part of many Big Data projects, and the template includes excellent support for interactive charts using Vega-Altair. This is a powerful combination that allows you to create professional, interactive visualizations directly in your website. The process involves several steps that we'll walk through together. First, you create your chart using Python and Altair, making sure to set the width property to 'container' for responsive design. Then you save the chart as a JSON file and place it in the assets/charts/ directory. In your page's front matter, you must include 'vega: true' to enable chart functionality. Finally, you embed the chart using the vegachart shortcode with the path to your JSON file.
+I modali sono finestre pop-up che mostrano contenuti aggiuntivi senza lasciare la pagina corrente. Sono perfetti per informazioni di dettaglio, immagini grandi o contenuti tecnici senza appesantire la pagina principale. Il template usa il componente modal di Bootstrap, che fornisce un sistema pulito e responsive. Per creare un modal servono due parti: un pulsante trigger e la struttura del modal. Il trigger include attributi data-toggle e data-target che indicano quale modal aprire. La struttura del modal include un header con titolo e pulsante di chiusura, un body per il contenuto e un eventuale footer. Potete personalizzare la dimensione con classi come modal-xl (extra large), modal-lg (large), modal-sm (small). La classe modal-dialog-centered centra verticalmente il modal nella pagina.
 -->
-
-# Step 14: Adding Data Visualizations (1/3)
-
-## Chart Integration (Vega-Altair)
-1. **Create Chart**: Generate JSON with Python/Altair
-2. **Save File**: Place in `assets/charts/`
-3. **Enable Vega**: Add `vega: true` to front matter
-4. **Embed Chart**: Use shortcode in page
 
 ---
 
 <!--
-Here's how to implement the chart creation process in Python. You'll use the Altair library, which is a powerful statistical visualization library for Python. In this example, we're creating a simple bar chart that encodes data from your dataset. The key point here is setting the width property to 'container' - this makes the chart responsive and ensures it adapts to different screen sizes. The height is set to a fixed value like 300 pixels, but you can adjust this based on your needs. Once you've created your chart, save it as a JSON file using the save method. Make sure to place this file in the assets/charts/ directory of your Jekyll site so it can be accessed by your website.
+La data visualization e una parte cruciale di molti progetti Big Data, e il template include un ottimo supporto per grafici interattivi con Vega-Altair. E una combinazione potente che permette di creare visualizzazioni professionali direttamente nel sito. Il processo prevede diversi passaggi. Prima create il grafico in Python con Altair, ricordando di impostare width='container' per avere un layout responsive. Poi salvate il grafico in formato JSON e mettetelo in assets/charts/. Nel front matter della pagina dovete includere 'vega: true' per abilitare la funzionalita. Infine incorporate il grafico usando lo shortcode vegachart con il path del file JSON.
 -->
 
-# Step 14: Adding Data Visualizations (2/3)
+# Passo 14: Aggiungere data visualization (1/3)
 
-## Chart Implementation
+## Integrazione grafici (Vega-Altair)
+1. **Crea il grafico**: genera JSON con Python/Altair
+2. **Salva il file**: inseriscilo in `assets/charts/`
+3. **Abilita Vega**: aggiungi `vega: true` nel front matter
+4. **Embed grafico**: usa lo shortcode nella pagina
+
+---
+
+<!--
+Ecco come implementare la creazione del grafico in Python. Userete la libreria Altair, una libreria molto potente per visualizzazione statistica. In questo esempio creiamo un semplice bar chart che codifica dati del dataset. Il punto chiave e impostare width='container': in questo modo il grafico e responsive e si adatta a dimensioni schermo diverse. L'altezza e impostata a un valore fisso, ad esempio 300 pixel, ma potete adattarla alle vostre esigenze. Una volta creato il grafico, salvatelo in JSON con il metodo save. Assicuratevi che il file sia in assets/charts/ del sito Jekyll, cosi sara accessibile dal sito.
+-->
+
+# Passo 14: Aggiungere data visualization (2/3)
+
+## Implementazione del grafico
 ```python
-# Python code to generate chart
+# Codice Python per generare il grafico
 import altair as alt
 
 chart = alt.Chart(data).mark_bar().encode(
-    x='column_a:N', 
+    x='column_a:N',
     y='column_b:Q'
 ).properties(width='container', height=300)
 
@@ -501,44 +547,40 @@ chart.save('assets/charts/my_chart.json')
 ---
 
 <!--
-Finally, here's how to embed your chart in your Jekyll page. You'll use the vegachart shortcode with the schema-url parameter pointing to your JSON file. Notice that the path includes your repository name - make sure to replace 'repo-name' with your actual repository name. The div wrapper with height styling ensures the chart displays properly and maintains its proportions. The style attributes on the vegachart element make it fill the entire container. The resulting charts are fully interactive, responsive, and integrate seamlessly with your website's design. This is particularly useful for displaying research results, data analysis, and project outcomes in an engaging way.
+Infine, ecco come incorporare il grafico nella pagina Jekyll. Userete lo shortcode vegachart con il parametro schema-url che punta al file JSON. Notate che il path include il nome del repository: ricordate di sostituire 'repo-name' con il vostro nome repository reale. Il wrapper div con altezza esplicita garantisce la resa corretta del grafico e le proporzioni. Gli attributi style dell'elemento vegachart lo fanno espandere all'intero container. I grafici risultanti sono interattivi, responsive e integrati in modo coerente nel design del sito. E molto utile per mostrare risultati di ricerca, analisi dati e output di progetto in modo coinvolgente.
 -->
 
-# Step 14: Adding Data Visualizations (3/3)
+# Passo 14: Aggiungere data visualization (3/3)
 
-## Embedding Chart in Jekyll
+## Embedding del grafico in Jekyll
 
 ```html
-<!-- In your page -->
-<div style="height: 400px">
-  <vegachart schema-url="/repo-name/assets/charts/my_chart.json" 
+<!-- Nella tua pagina -->
+<div style="height: 300px">
+  <vegachart schema-url="/repo-name/assets/charts/my_chart.json"
             style="width: 100%; height: 100%"></vegachart>
 </div>
 ```
 
 ---
 
-<!--
-Navigation is the backbone of any website, and customizing it properly is essential for user experience. The navigation menu is configured in the _config.yml file under the navbar section. The structure includes a brand section with your site title and logo, and a nav section with your menu items. Each menu item has a title and URL. You can create dropdown submenus using the 'child' property, which contains a list of sub-items. This is particularly useful for organizing related pages or sections. When configuring navigation, keep it logical and intuitive - group related pages together and use descriptive labels. Make sure to test your navigation on different screen sizes since the template is responsive and will adapt to mobile devices. Remember not to change style:dual and img parameters.
--->
-
-# Step 15: Customizing Navigation
+# Passo 15: Personalizzare la navigazione
 
 <div class="columns-2">
 <div>
 
 ```yaml
-# In _config.yml
+# Nel file _config.yml
 navbar:
   style: dual
   brand:
-    title: "Your Project Title"
+    title: "Titolo del Progetto"
     img: "./assets/images/logo.png"
     url: /
   nav:
-    - title: Guide
+    - title: Guida
       url: /guide.html
-    - title: Project
+    - title: Progetto
       url: /project.html
    ...
 ```
@@ -549,51 +591,55 @@ navbar:
     ...
  -  title: Team
     url: /team.html
-    - title: Resources
+    - title: Risorse
     child:
-    - title: Documentation
+    - title: Documentazione
         url: /docs.html
-    - title: Downloads
+    - title: Download
         url: /downloads.html
 ```
 </div>
 </div>
 
-## Navigation Best Practices
-- **Logical Structure**: Group related pages
-- **Clear Labels**: Use descriptive titles
-- **Mobile Responsive**: Test on different screen sizes
+## Best practice per la navigazione
+- **Struttura logica**: raggruppa pagine correlate
+- **Etichette chiare**: usa titoli descrittivi
+- **Mobile responsive**: testa su schermi differenti
+
+<!--
+La navigazione e la spina dorsale di ogni sito, e personalizzarla bene e essenziale per la user experience. Il menu di navigazione si configura in _config.yml nella sezione navbar. La struttura include una sezione brand con titolo del sito e logo, e una sezione nav con le voci di menu. Ogni voce ha un title e un URL. Potete creare dropdown submenu usando la proprieta 'child', che contiene la lista dei sotto-elementi. Questo e utile per organizzare pagine o sezioni correlate. Quando configurate la navigazione, mantenetela logica e intuitiva: raggruppate contenuti correlati e usate etichette descrittive. Testate la navigazione su schermi diversi, dato che il template e responsive e si adatta al mobile. Ricordate di non modificare i parametri style:dual e img.
+-->
 
 ---
 
 <!--
-The visual appearance of your website can be customized extensively through theme selection and color customization. The template includes several pre-built themes that you can choose from. To change the theme, modify the 'skin' property in the chulapa-skin section of your _config.yml file. Some popular options include 'graymor' for a professional gray theme, 'minty' for a fresh green look, 'lux' for an elegant dark theme, 'journal' for a clean, readable style, and 'academia' for an academic appearance. Each theme has its own color scheme and typography that's been carefully designed to work well together. Choose a theme that matches your project's tone and audience expectations.
+L'aspetto visuale del sito puo essere personalizzato in modo ampio tramite scelta del tema e personalizzazione dei colori. Il template include diversi temi predefiniti tra cui scegliere. Per cambiare tema, modifica la proprieta 'skin' nella sezione chulapa-skin di _config.yml. Alcune opzioni diffuse includono 'graymor' per un tema grigio professionale, 'minty' per un look verde fresco, 'lux' per un tema scuro elegante, 'journal' per uno stile pulito e leggibile e 'academia' per un aspetto accademico. Ogni tema include palette colori e tipografia gia bilanciate. Scegliete il tema in base al tono del progetto e alle aspettative del pubblico.
 -->
 
-# Step 16: Theme Customization
+# Passo 16: Personalizzazione del tema
 
-## Choosing a Theme
+## Scegliere un tema
 ```yaml
-# In _config.yml
+# Nel file _config.yml
 chulapa-skin:
-  skin: "graymor"  # or minty, lux, journal, etc.
+  skin: "graymor"  # oppure minty, lux, journal, ecc.
 ```
 
-## Available Themes
-- **graymor**: Professional gray theme
-- **minty**: Fresh green theme
-- **lux**: Elegant dark theme
+## Temi disponibili
+- **graymor**: tema grigio professionale
+- **minty**: tema verde fresco
+- **lux**: tema scuro elegante
 - ...
 
 ---
 
 <!--
-If you want to further customize the appearance beyond the pre-built themes, you can override specific color variables in the 'vars' section. For example, you can change the primary color to match your institution's branding or set a custom background color. The primary-color variable affects buttons, links, and other interactive elements, while body-bg controls the background color of your pages. This flexibility allows you to create a unique look while maintaining the professional quality of the template. Just make sure to choose colors that provide good contrast and readability for your users.
+Se volete spingere la personalizzazione oltre i temi predefiniti, potete sovrascrivere variabili colore specifiche nella sezione 'vars'. Per esempio potete cambiare il colore primario in linea con il branding del vostro ateneo o impostare un colore di sfondo custom. La variabile primary-color influenza pulsanti, link e altri elementi interattivi, mentre body-bg controlla il colore di sfondo delle pagine. Questa flessibilita vi consente di ottenere un look distintivo mantenendo la qualita professionale del template. Scegliete sempre colori con buon contrasto e alta leggibilita.
 -->
 
-# Step 16: Theme Customization
+# Passo 16: Personalizzazione del tema
 
-## Custom Colors
+## Colori custom
 ```yaml
 chulapa-skin:
   vars:
@@ -604,14 +650,14 @@ chulapa-skin:
 ---
 
 <!--
-Typography plays a crucial role in your website's appearance and readability. The template allows you to easily integrate custom fonts from Google Fonts. To add a custom font, first go to fonts.google.com and find a font you like. Copy the import URL and add it to the googlefonts section in your _config.yml file. Then, to apply the font site-wide, add the font-family name to the vars section under headings-font-family for headings or other typography variables. This example shows how to integrate the Lekton font, which is a nice monospace font that works well for technical content. Choose fonts that are readable and appropriate for your project's content and audience.
+La tipografia ha un ruolo fondamentale in aspetto e leggibilita del sito. Il template permette di integrare facilmente font custom da Google Fonts. Per aggiungere un font, andate su fonts.google.com e sceglietene uno adatto. Copiate l'URL di import e aggiungetelo nella sezione googlefonts di _config.yml. Poi, per applicarlo all'intero sito, inserite il nome del font nella sezione vars, ad esempio in headings-font-family per i titoli o in altre variabili tipografiche. L'esempio mostra l'integrazione di Lekton, un buon font monospace per contenuti tecnici. Scegliete font leggibili e coerenti con contenuto e target del progetto.
 -->
 
-# Step 17: Adding Custom Fonts
+# Passo 17: Aggiungere font custom
 
-## Google Fonts Integration
+## Integrazione Google Fonts
 ```yaml
-# In _config.yml
+# Nel file _config.yml
 googlefonts:
   - url: "https://fonts.googleapis.com/css2?family=Lekton:ital,wght@0,400;0,700;1,400&display=swap"
 
@@ -623,12 +669,12 @@ chulapa-skin:
 ---
 
 <!--
-You can also create custom CSS classes for more targeted font usage. In the assets/css/custom.scss file, you can define classes like the example shown, which allows you to apply specific fonts to individual elements using HTML classes. This gives you fine-grained control over typography while maintaining the overall design consistency of your site. The custom-font class applies the regular weight, while custom-font-bold applies the bold weight. You can then use these classes in your HTML content to apply the custom font to specific paragraphs, headings, or other elements where you want the special typography to appear.
+Potete anche creare classi CSS personalizzate per usare i font in modo piu mirato. Nel file assets/css/custom.scss potete definire classi come nell'esempio, cosi da applicare font specifici a singoli elementi tramite classi HTML. Questo vi offre controllo granulare sulla tipografia mantenendo la coerenza complessiva del design. La classe custom-font applica il peso regular, mentre custom-font-bold applica il bold. Potete poi usare queste classi nei contenuti HTML per paragrafo, titoli o altri elementi dove volete applicare la tipografia personalizzata.
 -->
 
-# Step 17: Adding Custom Fonts locally
+# Passo 17: Aggiungere font custom in locale
 
-## Custom CSS Classes
+## Classi CSS personalizzate
 ```scss
 // In assets/css/custom.scss
 .custom-font {
@@ -645,16 +691,16 @@ You can also create custom CSS classes for more targeted font usage. In the asse
 ---
 
 <!--
-Advanced layout techniques can help you create more visually interesting and effective page designs. The template includes several helpful features for this. The full-width-wrapper class allows you to create sections that span the entire width of the browser window, which is particularly effective for hero images or section dividers. This breaks out of the normal content container and can create dramatic visual impact. Use this technique sparingly for maximum effect - it works best for large images, section separators, or when you want to create a strong visual statement. The full-width-image class ensures that images within these sections display properly and maintain their aspect ratio.
+Le tecniche di layout avanzate possono aiutarvi a creare pagine piu efficaci e visivamente interessanti. Il template include diverse funzionalita utili. La classe full-width-wrapper permette di creare sezioni che occupano l'intera larghezza della finestra browser, particolarmente efficace per hero image o separatori di sezione. Questo rompe il vincolo del container standard e puo creare un forte impatto visivo. Usate questa tecnica con moderazione per massimizzare l'effetto: funziona al meglio con immagini grandi, separatori o sezioni ad alto valore comunicativo. La classe full-width-image garantisce che le immagini in queste sezioni siano renderizzate correttamente mantenendo le proporzioni.
 -->
 
-# Step 18: Advanced Layout Techniques
+# Passo 18: Tecniche di layout avanzate
 
-## Full-Width Sections
+## Sezioni full-width
 ```html
 <div class="full-width-wrapper">
-  <img src="assets/images/wide-image.jpg" 
-       alt="Full width image" 
+  <img src="assets/images/wide-image.jpg"
+       alt="Immagine a larghezza completa"
        class="full-width-image">
 </div>
 ```
@@ -662,15 +708,15 @@ Advanced layout techniques can help you create more visually interesting and eff
 ---
 
 <!--
-Managing team member information is made easy with the template's built-in team management system. Team information is stored in the _data/members.yml file, which uses YAML format to define each team member's details. For each member, you can specify their name, and a personal page (or personal github account). Once you've added your team members to this file, the footer will automatically generate a team section that displays all members.
+La gestione delle informazioni dei membri del team e semplificata dal sistema integrato nel template. Le informazioni sono archiviate nel file _data/members.yml, che usa formato YAML per definire i dettagli di ciascun membro. Per ogni membro potete specificare nome e pagina personale (o account GitHub personale). Una volta aggiunti i membri in questo file, il footer genera automaticamente una sezione team con la lista completa.
 -->
 
-# Step 19: Team Member Management
+# Passo 19: Gestione membri del team
 
-## Team Configuration
+## Configurazione team
 ```yaml
 # In _data/members.yml
-- name: First Name Last Name
+- name: Nome Cognome
   github: https://kdd.isti.cnr.it/people/student-1
   role: student
 ```
@@ -678,40 +724,40 @@ Managing team member information is made easy with the template's built-in team 
 ---
 
 <!--
-Before delivering your website, it's important to go through a final checklist to ensure everything is working correctly. First, verify that your repository name follows the correct format and that the baseurl in your _config.yml matches exactly. Check that all your pages have proper front matter with the necessary metadata. Make sure your navigation is updated and functional, with all links working correctly. Verify that team information is complete and accurate in the members.yml file. Ensure all multimedia assets like images and videos are properly placed in the assets directory and display correctly. Finally, confirm that GitHub Pages deployment is successful by checking that your site is accessible at the expected URL.
+Prima della consegna del sito, e importante passare una checklist finale per verificare che tutto funzioni. Prima, controllate che il nome del repository segua il formato corretto e che il baseurl in _config.yml corrisponda esattamente. Verificate che tutte le pagine abbiano un front matter corretto con metadati necessari. Assicuratevi che la navigazione sia aggiornata e funzionante, con link corretti. Verificate che le informazioni del team in members.yml siano complete e accurate. Controllate che asset multimediali come immagini e video siano nelle cartelle corrette e visualizzati bene. Infine, confermate che il deployment GitHub Pages sia riuscito verificando che il sito sia raggiungibile all'URL previsto.
 -->
 
 
-# Step 20: Final Checklist and Best Practices
+# Passo 20: Checklist finale e best practice
 
-## Pre-Launch Checklist
-- ✅ **Repository Name**: Correct format (gX-2025-website)
-- ✅ **Baseurl**: Matches repository name
-- ✅ **Front Matter**: All pages have proper headers
-- ✅ **Navigation**: Updated and functional
-- ✅ **Team Info**: Complete member information
-- ✅ **Multimedia**: Images and videos properly placed
-- ✅ **GitHub Pages**: Deployment successful
-
----
-
-# Step 20: Final Checklist and Best Practices
-
-## Quality Assurance
-- **Cross-browser Testing**: Chrome, Firefox, Safari
-- **Mobile Responsive**: Test on different screen sizes
-- **Load Speed**: Optimize images and assets
-- **Accessibility**: Alt text for images, proper headings
-- **SEO**: Meta descriptions, page titles
+## Checklist pre-lancio
+- ✅ **Nome repository**: formato corretto (gX-2026-website)
+- ✅ **Baseurl**: corrisponde al nome repository
+- ✅ **Front Matter**: tutte le pagine hanno header corretti
+- ✅ **Navigazione**: aggiornata e funzionante
+- ✅ **Info team**: informazioni membri complete
+- ✅ **Multimedia**: immagini e video posizionati correttamente
+- ✅ **GitHub Pages**: deployment completato con successo
 
 ---
 
-# Thank You!
+# Passo 20: Checklist finale e best practice
 
-## Questions?
-- Review the guide documentation
-- Check GitHub repository
+## Garanzia di qualita
+- **Cross-browser testing**: Chrome, Firefox, Safari
+- **Mobile responsive**: test su dimensioni schermo diverse
+- **Load speed**: ottimizza immagini e asset
+- **Accessibility**: testo alt per immagini, heading corretti
+- **SEO**: meta description, page title
+
+---
+
+# Grazie!
+
+## Domande?
+- Rivedi la documentazione della guida
+- Controlla il repository GitHub
 
 <br>
 
-**Let's start building!**
+**Iniziamo a costruire!**

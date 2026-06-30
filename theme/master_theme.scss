@@ -594,3 +594,12 @@ section.big-text {
     display: none;
   }
 }
+
+.alert {
+  padding: 1rem;
+  border-radius: 0.25rem;
+  margin-bottom: 1rem;
+  background-color: var(--valightgrey);
+  color: var(--vablack);
+  font-weight: bold;
+}
